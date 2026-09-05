@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>یه حرف ساده و از ته دل</title>
+<meta name="description" content="یک نامه‌ی دیجیتال خصوصی">
+
+<!-- فونت فارسی زیبا (وزیرمتن) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- لایه ذرات نور / ستاره (توسط جاوااسکریپت ساخته می‌شود) -->
+<div id="particles"></div>
+
+<!-- ================= صفحه‌ی ورود ================= -->
+<section id="intro-screen" class="screen">
+  <div class="intro-content fade-in">
+    <p class="intro-title">یک پیام کوچک برای تو...</p>
+    <button id="start-btn" class="btn btn-primary">شروع تجربه</button>
+  </div>
+</section>
+
+<!-- ================= محتوای اصلی ================= -->
+<main id="main-content" class="hidden">
+
+  <!-- بخش اول: پیام احساسی و دکمه‌ی آهنگ -->
+  <section id="hero-section" class="screen">
+    <div class="content-box">
+      <p class="hero-text">
+        بعضی حرف‌ها رو نمی‌شه خیلی رسمی گفت...<br>
+        گاهی فقط باید ساده و از ته دل گفت.
+      </p>
+      <button id="show-music-btn" class="btn btn-primary">یه آهنگ برات دارم 🎧</button>
+    </div>
+  </section>
+
+  <!-- بخش دوم: پلیر موسیقی -->
+  <section id="music-section" class="screen hidden">
+    <div class="content-box">
+
+      <div class="music-player">
+        <p class="song-name" id="song-name">نام آهنگ</p>
+
+        <button id="play-pause-btn" class="play-btn" aria-label="پخش">
+          <svg id="icon-play" viewBox="0 0 24 24" class="icon"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="icon-pause" viewBox="0 0 24 24" class="icon hidden"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+
+        <div class="progress-wrap">
+          <span class="time" id="current-time">۰۰:۰۰</span>
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="time" id="duration-time">۰۰:۰۰</span>
+        </div>
+
+        <div class="volume-wrap">
+          <svg viewBox="0 0 24 24" class="icon-small"><path d="M3 9v6h4l5 5V4L7 9H3z"/></svg>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.8">
+        </div>
+
+        <audio id="audio-player" preload="metadata"></audio>
+      </div>
+
+      <p id="msg-after-play" class="soft-text hidden">
+        فقط خواستم این آهنگ رو با تو قسمت کنم...<br>همین.
+      </p>
+
+      <button id="show-msg2-btn" class="btn btn-secondary hidden">ادامه بده</button>
+
+      <p id="msg-second" class="soft-text hidden">
+        شاید این سایت خیلی ساده باشه،<br>
+        ولی حرفی که پشتشه، برای من ساده نیست. ❤️
+      </p>
+
+      <button id="show-final-btn" class="btn btn-secondary hidden">بقیه‌ش رو ببین</button>
+    </div>
+  </section>
+
+  <!-- بخش پایانی: سوال و دو دکمه -->
+  <section id="final-section" class="screen hidden">
+    <div class="content-box">
+      <p class="final-text">
+        ممنون که تا اینجا اومدی...<br>
+        حالا فقط می‌خواستم بدونم<br>
+        تو چه حسی داری؟
+      </p>
+
+      <div class="choice-buttons">
+        <button id="yes-btn" class="btn btn-primary">آره ❤️</button>
+        <button id="think-btn" class="btn btn-outline">بذار بیشتر فکر کنم 🌱</button>
+      </div>
+
+      <p id="response-text" class="response-text hidden"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">با احترام و از ته دل</footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
