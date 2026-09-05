@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>یک نامه دیجیتالی</title>
+    <link rel="stylesheet" href="/Love/css/style.css">
+</head>
+<body>
+    <!-- پس‌زمینه با انیمیشن ذرات -->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="particles"></div>
+    </div>
+
+    <!-- صفحه خوش‌آمد -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <div class="logo-circle"></div>
+            <h1 class="welcome-title">یک نامه برای تو</h1>
+            <button id="start-btn" class="btn btn-primary">شروع 🚀</button>
+        </div>
+    </div>
+
+    <!-- صفحه اصلی -->
+    <div id="main-screen" class="screen">
+        <div class="main-content">
+            <!-- بخش اول - متن احساسی -->
+            <section class="section section-intro">
+                <div class="intro-text">
+                    <p>بعضی حرف‌ها رو نمی‌شه خیلی رسمی گفت...</p>
+                    <p>گاهی فقط باید ساده و از ته دل گفت.</p>
+                </div>
+                <button id="music-trigger-btn" class="btn btn-secondary">یه آهنگ برات دارم 🎧</button>
+            </section>
+
+            <!-- بخش موسیقی -->
+            <section id="music-section" class="section section-music hidden">
+                <div class="music-player">
+                    <div class="player-header">
+                        <h2 id="song-title" class="song-title">آهنگ خصوصی</h2>
+                    </div>
+
+                    <div class="player-controls">
+                        <button id="play-btn" class="btn-icon play-icon">▶</button>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="time-display">
+                            <span id="current-time">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="volume-container">
+                        <span class="volume-icon">🔊</span>
+                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="70">
+                    </div>
+                </div>
+
+                <!-- متن‌های احساسی -->
+                <div id="message-1" class="emotional-message hidden">
+                    <p>فقط خواستم این آهنگ رو با تو قسمت کنم...</p>
+                    <p>همین.</p>
+                </div>
+
+                <div id="message-2" class="emotional-message hidden">
+                    <p>شاید این سایت خیلی ساده باشه،</p>
+                    <p>ولی حرفی که پشتشه، برای من ساده نیست. ❤️</p>
+                </div>
+            </section>
+
+            <!-- بخش سؤال نهایی -->
+            <section id="final-section" class="section section-final hidden">
+                <div class="final-message">
+                    <p>ممنون که تا اینجا اومدی...</p>
+                    <p>حالا فقط می‌خواستم بدونم</p>
+                    <p>تو چه حسی داری؟</p>
+                </div>
+
+                <div class="response-buttons">
+                    <button id="yes-btn" class="btn btn-yes">آره ❤️</button>
+                    <button id="no-btn" class="btn btn-maybe">بذار بیشتر فکر کنم 🌱</button>
+                </div>
+
+                <!-- پاسخ "آره" -->
+                <div id="yes-response" class="response-message hidden">
+                    <p>پس شاید اینجا شروع یک داستان قشنگ باشه... ❤️</p>
+                </div>
+
+                <!-- پاسخ "بذار فکر کنم" -->
+                <div id="no-response" class="response-message hidden">
+                    <p>حتماً. عجله‌ای نیست.</p>
+                    <p>مهم اینه که انتخابت با خیال راحت و از ته دل باشه. 🌱</p>
+                </div>
+            </section>
+
+            <!-- فوتر -->
+            <footer class="footer">
+                <p>با احترام و از ته دل</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- عنصر صوتی -->
+    <audio id="audio-player">
+        <source src="/Love/music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="/Love/js/script.js"></script>
+</body>
+</html>
